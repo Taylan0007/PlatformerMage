@@ -23,7 +23,8 @@ public class PlayerMovement : MonoBehaviour
     
     private void Start()
     {
-        rigidBody = GetComponent<Rigidbody2D>();
+
+        rigidBody = this.GetComponent<Rigidbody2D>();
     }
     private void Update()
     {
@@ -45,6 +46,11 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(Dasher());
             StopAllCoroutines();
                                       
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Signals.Instance.OnSkillUse.Invoke("FireBall");
         }
 
        
