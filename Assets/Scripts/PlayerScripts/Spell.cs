@@ -8,7 +8,7 @@ using Object = System.Object;
 
 public class Spell : MonoBehaviour
 {
-    public float FireBallSpeed = 2f;
+    public float FireBallSpeed = 8f;
 
     public GameObject FireBallSpell;
     public PlayerMovement PlayerCharacter;

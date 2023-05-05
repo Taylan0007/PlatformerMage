@@ -20,10 +20,14 @@ public class PlayerMovement : MonoBehaviour
     private bool _canDash;
     private float _dashCooldown = 0.5f;
 
+    private bool canShoot;
+    public float shootCooldown = 2f;
+    
+
     
     private void Start()
     {
-
+        canShoot = true;
         rigidBody = this.GetComponent<Rigidbody2D>();
     }
     private void Update()
@@ -48,9 +52,11 @@ public class PlayerMovement : MonoBehaviour
                                       
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && canShoot)
         {
             Signals.Instance.OnSkillUse.Invoke("FireBall");
+            StartCoroutine(Cooldown());
+
         }
 
        
@@ -73,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rigidBody.AddForce(new Vector2(0f, moveVertical * jump), ForceMode2D.Impulse);
         }
-        
+
     }
 
     
@@ -101,5 +107,18 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         }
     }
+
+    private IEnumerator Cooldown()
+    {
+        while (true)
+        {
+            canShoot = false;
+            yield return new WaitForSeconds(shootCooldown);
+            canShoot = true;
+        }
+
+    }
+
+    
 
 }

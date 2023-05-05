@@ -535,7 +535,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864384141}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6199999, y: 0, z: 0}
+  m_LocalPosition: {x: 0.78, y: 0.14, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -965,11 +965,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d00c93ea3735146a5ab38ada1a50fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1.5
   jump: 3
   isGrounded: 0
   _dashingVelocity: 2
   _dashingTime: 0.5
+  shootCooldown: 2
 --- !u!95 &1950937002
 Animator:
   serializedVersion: 4
@@ -1002,7 +1003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74c150fdd9544343bd329d90b775564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FireBallSpeed: 2
+  FireBallSpeed: 8
   FireBallSpell: {fileID: 6560503006423922656, guid: 95f8af69afeb24820b209253ba141922, type: 3}
   PlayerCharacter: {fileID: 1950937001}
 --- !u!1 &2007900328
@@ -1141,7 +1142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2030328547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.09, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
